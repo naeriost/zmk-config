@@ -1,16 +1,105 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+#define DEFAULT 0
+#define LOWER   1
+#define RAISE   2
+#define RAISE   3
+
 / {
 	keymap {
 		compatible = "zmk,keymap";
 
 		default_layer {
 // -----------------------------------------------------------------------------------------
-// |  TAB  |  Q   |  Q   |  W   |  F   |  P   |   B   |  J    |  L   |  U   |   Y   |  '    |
+// |  DEL  |  Q   |  Q   |  W   |  F   |  P   |   B   |  J    |  L   |  U   |   Y   |  '    |
+// |  K_CUT|  A   |  A   |  R   |  S   |  T   |   G   |  M    |  N   |  E   |   I   |  O    |
+// | K_COPY|  Z   |  Z   |  X   |  C   |  D   |   V   |  K    |  ,   |  ,   |   .   |  /    |
+// | K_PASTE| LCTL | PSCRN| LALT | LOWR | SHIFT| SPACE |  RAIS | LARW | DARW |   -   |  ;    |
+			bindings = <
+	&kp TAB   &kp Q    &kp W    &kp E     &kp R  &kp T  &kp Y     &kp U  &kp I     &kp O    &kp P    &kp DEL
+	&kp ESC   &kp A    &kp S    &kp D     &kp F  &kp G  &kp H     &kp J  &kp K     &kp L    &kp SEMI &kp SQT
+	&kp LSHFT &kp Z    &kp X    &kp C     &kp V  &kp B  &kp N     &kp M  &kp COMMA &kp DOT  &kp BSLH &kp RET
+	&trans    &kp LGUI &kp LALT &kp LCTRL &trans &trans &kp SPACE &trans &kp LEFT  &kp DOWN &kp UP   &kp RIGHT
+			>;
+		};
+	};
+};
+
+
+/ {
+	keymap {
+		compatible = "zmk,keymap";
+
+		default_layer {
+// -----------------------------------------------------------------------------------------
+// |  DEL  |  Q   |  Q   |  W   |  F   |  P   |   B   |  J    |  L   |  U   |   Y   |  '    |
 // |  ESC  |  A   |  A   |  R   |  S   |  T   |   G   |  M    |  N   |  E   |   I   |  O    |
 // | SHIFT |  Z   |  Z   |  X   |  C   |  D   |   V   |  K    |  ,   |  ,   |   .   |  /    |
-// | FN    | LGUI | LALT | LCTL | LOWR | SHIFT| SPACE|  RAIS | LARW | DARW |   -   |  ;    |
+// | FN    | LCTL | PSCRN| LALT | LOWR | SHIFT| SPACE |  RAIS | LARW | DARW |   -   |  ;    |
+			bindings = <
+	&kp TAB   &kp Q    &kp W    &kp E     &kp R  &kp T  &kp Y     &kp U  &kp I     &kp O    &kp P    &kp DEL
+	&kp ESC   &kp A    &kp S    &kp D     &kp F  &kp G  &kp H     &kp J  &kp K     &kp L    &kp SEMI &kp SQT
+	&kp LSHFT &kp Z    &kp X    &kp C     &kp V  &kp B  &kp N     &kp M  &kp COMMA &kp DOT  &kp BSLH &kp RET
+	&trans    &kp LGUI &kp LALT &kp LCTRL &trans &trans &kp SPACE &trans &kp LEFT  &kp DOWN &kp UP   &kp RIGHT
+			>;
+		};
+	};
+};
+
+
+/ {
+	keymap {
+		compatible = "zmk,keymap";
+
+		default_layer {
+// -----------------------------------------------------------------------------------------
+// |  DEL  |  Q   |  Q   |  W   |  F   |  P   |   B   |  J    |  L   |  U   |   Y   |  '    |
+// |  ESC  |  A   |  A   |  R   |  S   |  T   |   G   |  M    |  N   |  E   |   I   |  O    |
+// | SHIFT |  Z   |  Z   |  X   |  C   |  D   |   V   |  K    |  ,   |  ,   |   .   |  /    |
+// | FN    | LCTL | PSCRN| LALT | LOWR | SHIFT| SPACE |  RAIS | LARW | DARW |   -   |  ;    |
+			bindings = <
+	&kp TAB   &kp Q    &kp W    &kp E     &kp R  &kp T  &kp Y     &kp U  &kp I     &kp O    &kp P    &kp DEL
+	&kp ESC   &kp A    &kp S    &kp D     &kp F  &kp G  &kp H     &kp J  &kp K     &kp L    &kp SEMI &kp SQT
+	&kp LSHFT &kp Z    &kp X    &kp C     &kp V  &kp B  &kp N     &kp M  &kp COMMA &kp DOT  &kp BSLH &kp RET
+	&trans    &kp LGUI &kp LALT &kp LCTRL &trans &trans &kp SPACE &trans &kp LEFT  &kp DOWN &kp UP   &kp RIGHT
+			>;
+		};
+	};
+};
+
+
+/ {
+	keymap {
+		compatible = "zmk,keymap";
+
+		default_layer {
+// -----------------------------------------------------------------------------------------
+// |  DEL  |  Q   |  Q   |  W   |  F   |  P   |   B   |  J    |  L   |  U   |   Y   |  '    |
+// |  ESC  |  A   |  A   |  R   |  S   |  T   |   G   |  M    |  N   |  E   |   I   |  O    |
+// | SHIFT |  Z   |  Z   |  X   |  C   |  D   |   V   |  K    |  ,   |  ,   |   .   |  /    |
+// | FN    | LCTL | PSCRN| LALT | LOWR | SHIFT| SPACE |  RAIS | LARW | DARW |   -   |  ;    |
+			bindings = <
+	&kp TAB   &kp Q    &kp W    &kp E     &kp R  &kp T  &kp Y     &kp U  &kp I     &kp O    &kp P    &kp DEL
+	&kp ESC   &kp A    &kp S    &kp D     &kp F  &kp G  &kp H     &kp J  &kp K     &kp L    &kp SEMI &kp SQT
+	&kp LSHFT &kp Z    &kp X    &kp C     &kp V  &kp B  &kp N     &kp M  &kp COMMA &kp DOT  &kp BSLH &kp RET
+	&trans    &kp LGUI &kp LALT &kp LCTRL &trans &trans &kp SPACE &trans &kp LEFT  &kp DOWN &kp UP   &kp RIGHT
+			>;
+		};
+	};
+};
+
+
+/ {
+	keymap {
+		compatible = "zmk,keymap";
+
+		default_layer {
+// -----------------------------------------------------------------------------------------
+// |  DEL  |  Q   |  Q   |  W   |  F   |  P   |   B   |  J    |  L   |  U   |   Y   |  '    |
+// |  ESC  |  A   |  A   |  R   |  S   |  T   |   G   |  M    |  N   |  E   |   I   |  O    |
+// | SHIFT |  Z   |  Z   |  X   |  C   |  D   |   V   |  K    |  ,   |  ,   |   .   |  /    |
+// | FN    | LCTL | PSCRN| LALT | LOWR | SHIFT| SPACE |  RAIS | LARW | DARW |   -   |  ;    |
 			bindings = <
 	&kp TAB   &kp Q    &kp W    &kp E     &kp R  &kp T  &kp Y     &kp U  &kp I     &kp O    &kp P    &kp DEL
 	&kp ESC   &kp A    &kp S    &kp D     &kp F  &kp G  &kp H     &kp J  &kp K     &kp L    &kp SEMI &kp SQT
